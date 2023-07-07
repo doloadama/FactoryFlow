@@ -45,10 +45,10 @@ class Quality(db.Model):
         return f"<Quality {self.product_name}>"
     
 class User(UserMixin, db.Model):
+    #User creation method
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(100))
-    # Define other user-related fields as needed
 
     def __repr__(self):
         return f"<User {self.username}>"
