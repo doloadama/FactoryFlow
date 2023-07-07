@@ -5,7 +5,7 @@ from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, current_user, logout_user, login_required
 from app import app, db
 from app.models import User
-
+from flask import render_template
 
 
 @app.route('/')
@@ -46,3 +46,7 @@ def logout():
     logout_user()
     flash('Logged out successfully!', 'success')
     return redirect(url_for('login'))
+
+@app.route('/')
+def home():
+    return render_template('base.html')
