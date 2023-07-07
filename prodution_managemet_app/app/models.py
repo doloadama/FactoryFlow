@@ -1,4 +1,7 @@
 from app import db
+from flask_login import UserMixin
+from app import login_manager
+
 
 class Order(db.Model):
     date = db.Column(db.DateTimeField(auto_now_add=True))
@@ -40,3 +43,16 @@ class Quality(db.Model):
 
     def __repr__(self):
         return f"<Quality {self.product_name}>"
+    
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(100))
+    # Define other user-related fields as needed
+
+    def __repr__(self):
+        return f"<User {self.username}>"
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
