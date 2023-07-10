@@ -1,5 +1,4 @@
 from flask import render_template, request, redirect, url_for
-from app import app
 from app.models import Order, Inventory, Schedule, Quality, Report
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, current_user, logout_user, login_required
