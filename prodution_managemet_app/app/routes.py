@@ -8,7 +8,7 @@ from flask import render_template
 from app.__init__ import app
 
 
-@app.route('/')
+"""@app.route('/dashboard')
 def dashboard():
     # Retrieve necessary data for the dashboard
     # Example:
@@ -19,7 +19,7 @@ def dashboard():
     
     # Render the dashboard template with the retrieved data
     return render_template('dashboard.html', orders=orders, inventory=inventory, schedules=schedules, quality_records=quality_records)
-
+"""
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
