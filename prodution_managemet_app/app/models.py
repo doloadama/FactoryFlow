@@ -1,4 +1,4 @@
-from app import db
+from prodution_managemet_app.app import db
 from flask_login import UserMixin
 from app import login_manager
 
