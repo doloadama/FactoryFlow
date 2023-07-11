@@ -3,7 +3,6 @@ from flask_login import login_user, current_user, logout_user, login_required
 from app import app
 from app.models import User
 from app.models import Inventory, Order, Quality, Schedule
-from . import app
 
 
 @app.route('/')
