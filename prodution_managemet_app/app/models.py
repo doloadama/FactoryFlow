@@ -17,7 +17,7 @@ class Order(db.Model):
         return f"<Order {self.order_number}>"
 
 class Inventory(db.Model):
-    date = db.Column(db.DateTimeField(auto_now_add=True))
+    date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100))
     quantity_in_stock = db.Column(db.Integer)
@@ -27,7 +27,7 @@ class Inventory(db.Model):
         return f"<Inventory {self.product_name}>"
 
 class Schedule(db.Model):
-    date_created = db.Column(db.DateTimeField(auto_now_add=True))
+    date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100))
     start_date = db.Column(db.Date)
@@ -37,7 +37,7 @@ class Schedule(db.Model):
         return f"<Schedule {self.product_name}>"
 
 class Quality(db.Model):
-    date = db.Column(db.DateTimeField(auto_now_add=True))
+    date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100))
     quality_status = db.Column(db.String(20))
