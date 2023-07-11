@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
-    <title>Industrial Production Management App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Production Management App</title>
 </head>
 <body>
     <header>
-        <h1>Industrial Production Management App</h1>
+        <h1>Production Management App</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
-
-    <div class="middle-button">
-        <a href="{{ url_for('login') }}" class="btn">Login</a>
-    </div>
-
-    <footer>
-        <p>© 2023 Your Company. All rights reserved.</p>
-    </footer>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <main>
+    </main>
 </body>
 </html>

@@ -16,6 +16,7 @@ class Order(db.Model):
     def __repr__(self):
         return f"<Order {self.order_number}>"
 
+
 class Inventory(db.Model):
     date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +26,7 @@ class Inventory(db.Model):
 
     def __repr__(self):
         return f"<Inventory {self.product_name}>"
+
 
 class Schedule(db.Model):
     date = db.Column(DateTime, default=datetime.utcnow)
@@ -36,6 +38,7 @@ class Schedule(db.Model):
     def __repr__(self):
         return f"<Schedule {self.product_name}>"
 
+
 class Quality(db.Model):
     date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
@@ -45,15 +48,17 @@ class Quality(db.Model):
 
     def __repr__(self):
         return f"<Quality {self.product_name}>"
-    
+
+
 class User(UserMixin, db.Model):
-    #User creation method
+    # User creation method
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(100))
 
     def __repr__(self):
         return f"<User {self.username}>"
+
 
 @login_manager.user_loader
 def load_user(user_id):
