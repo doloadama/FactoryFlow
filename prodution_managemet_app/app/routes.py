@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, current_user, logout_user, login_required
 from app import app
 from app.models import User
-from prodution_managemet_app.app.models import Inventory, Order, Quality, Schedule
+from app.models import Inventory, Order, Quality, Schedule
 
 @app.route('/')
 def home():
