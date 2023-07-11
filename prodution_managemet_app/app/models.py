@@ -1,11 +1,12 @@
 from app import db
 from datetime import datetime
+from sqlalchemy import DateTime
 from flask_login import UserMixin
 from app import login_manager
 
 
 class Order(db.Model):
-    date = db.Column(db.DateTimeField(auto_now_add=True))
+    date = db.Column(DateTime, default=datetime.utcnow)
     id = db.Column(db.Integer, primary_key=True)
     order_number = db.Column(db.String(50), unique=True)
     customer_name = db.Column(db.String(100))
