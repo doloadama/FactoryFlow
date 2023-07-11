@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, current_user, logout_user, login_required
-from .import app
+from app import app
 from app.models import User
 from app.models import Inventory, Order, Quality, Schedule
 
