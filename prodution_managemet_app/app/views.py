@@ -11,3 +11,6 @@ def create_user(request):
         form = UserCreationForm()
     
     return render(request, 'create_user.html', {'form': form})
+
+def home(request):
+    return render(request, 'homepage.html')
